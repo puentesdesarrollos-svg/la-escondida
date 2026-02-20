@@ -1,106 +1,120 @@
-:root {
-  --color-bg: #F9F8F4;
-  --color-text: #333333;
-  --color-primary: #2D3B2D;
-  --color-accent: #C2B280;
-  --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Montserrat', sans-serif;
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .gallery-swiper {
+    height: 400px;
+  }
 }
 
-/* --- RESET Y BASE --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { 
-  overflow-x: hidden; 
-  width: 100%; 
-  -webkit-text-size-adjust: 100%;
-}
-body { 
-  font-family: var(--font-sans); 
-  background: var(--color-bg); 
-  color: var(--color-text);
-  line-height: 1.5;
-}
+@media (max-width: 768px) {
 
-/* --- ESTRUCTURA --- */
-.container { 
-  width: 90%; 
-  max-width: 1200px; 
-  margin: 0 auto; 
-}
+  /* Navbar */
+  .navbar {
+    padding: 15px 5%;
+  }
 
-/* --- NAVBAR --- */
-.navbar { 
-  position: absolute; 
-  width: 100%; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 20px 5%; 
-  z-index: 100; 
-}
-.logo-img { height: 40px; width: auto; }
-.nav-list { display: none; } /* Oculto por defecto para evitar líos en móvil */
+  .nav-list {
+    gap: 15px;
+  }
 
-/* --- HERO --- */
-.hero { 
-  height: 100vh; 
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/ym906yLH/foto-4-panoramica.png') center/cover no-repeat;
-  display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 0 20px;
-}
-h1 { font-family: var(--font-serif); font-size: clamp(2.2rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; }
+  .nav-list a {
+    font-size: 0.7rem;
+  }
 
-/* --- BOTONES --- */
-.btn-primary { background: #fff; color: #333; padding: 15px 30px; text-decoration: none; display: inline-block; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
-.btn-outline { border: 1px solid #fff; color: #fff; padding: 15px 30px; text-decoration: none; display: inline-block; font-size: 0.8rem; text-transform: uppercase; }
-.botones-masterplan { display: flex; flex-direction: column; gap: 15px; margin-top: 25px; }
+  .logo-img {
+    height: 40px;
+  }
 
-/* --- SECCIONES --- */
-section { padding: 60px 0; }
-.intro-section { text-align: center; }
+  /* Hero */
+  .hero {
+    height: 90vh;
+    padding: 0 15px;
+  }
 
-/* Amenities */
-.features-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-.feature-card { text-align: center; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
 
-/* Masterplan */
-.masterplan-section { background: var(--color-primary); color: #fff; text-align: center; }
-.content-split { display: flex; flex-direction: column; gap: 40px; }
-.masterplan-img { width: 100%; height: auto; border-radius: 8px; }
-.specs-list { list-style: none; margin-bottom: 20px; }
-.specs-list li { margin-bottom: 10px; font-size: 1.1rem; }
+  .event-badge {
+    margin-bottom: 25px;
+    font-size: 0.8rem;
+  }
 
-/* Ubicación y Galería */
-.location-section { text-align: center; background: #fff; }
-.img-croquis-full { width: 100%; max-width: 900px; height: auto; border-radius: 8px; }
-.gallery-swiper { width: 100%; height: 350px; border-radius: 12px; margin-top: 30px; }
-.gallery-swiper img { width: 100%; height: 100%; object-fit: cover; }
-
-/* Contacto */
-.footer-section { background: #1a1a1a; color: #fff; text-align: center; }
-.contact-form { max-width: 450px; margin: 30px auto; display: flex; flex-direction: column; gap: 10px; }
-.contact-form input { padding: 15px; border: none; border-radius: 4px; width: 100%; }
-.btn-submit { background: var(--color-accent); color: #fff; padding: 15px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
-
-/* =============================================
-   AJUSTES PARA PANTALLAS GRANDES (PC / TABLET)
-   ============================================= */
-@media (min-width: 800px) {
-  section { padding: 100px 0; }
-  
-  .nav-list { display: flex; list-style: none; gap: 30px; } /* Reaparece el menú en PC */
-  
-  .features-grid { grid-template-columns: repeat(3, 1fr); }
-  
-  .content-split { 
-    flex-direction: row; /* Vuelve a ser uno al lado del otro */
-    text-align: left; 
+  /* Botones */
+  .botones-masterplan {
+    flex-direction: column;
     align-items: center;
   }
-  .text-block, .image-block { flex: 1; }
-  
-  .botones-masterplan { flex-direction: row; }
-  
-  .gallery-swiper { height: 550px; }
-  
-  .masterplan-section { text-align: left; }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* Secciones */
+  .intro-section {
+    padding: 60px 20px;
+  }
+
+  .features-section {
+    padding: 60px 5%;
+  }
+
+  .masterplan-section {
+    padding: 60px 5%;
+  }
+
+  .content-split {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .text-block,
+  .image-block {
+    min-width: 100%;
+  }
+
+  .location-section {
+    padding: 60px 5%;
+  }
+
+  .gallery-section {
+    padding: 60px 5%;
+  }
+
+  .gallery-swiper {
+    height: 300px;
+  }
+
+  .footer-section {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .gallery-swiper {
+    height: 250px;
+  }
+
+  .contact-form input {
+    padding: 12px;
+  }
+
+  .btn-submit {
+    padding: 12px;
+  }
 }
