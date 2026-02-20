@@ -12,8 +12,18 @@
 
 body { font-family: var(--font-sans); background-color: var(--color-bg); color: var(--color-text); line-height: 1.6; overflow-x: hidden; }
 
-/* Navbar */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: absolute; width: 100%; top: 0; z-index: 10; background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent); }
+/* Navbar - Base */
+.navbar { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 20px 5%; 
+  position: absolute; 
+  width: 100%; 
+  top: 0; 
+  z-index: 10; 
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent); 
+}
 .logo-img { height: 50px; width: auto; }
 .nav-list { display: flex; list-style: none; gap: 30px; }
 .nav-list a { text-decoration: none; color: var(--color-white); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -61,3 +71,34 @@ h1 { font-family: var(--font-serif); font-size: 4rem; font-weight: 400; margin-b
 .fade-in-scroll { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
 .fade-in-scroll.visible { opacity: 1; transform: translateY(0); }
 
+/* --- AJUSTES RESPONSIVE --- */
+
+@media (max-width: 768px) {
+  /* Menu Celular */
+  .navbar {
+    flex-direction: column;
+    padding: 15px 5%;
+    background: rgba(0,0,0,0.7);
+  }
+  .logo-img {
+    height: 35px;
+    margin-bottom: 12px;
+  }
+  .nav-list {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-list a {
+    font-size: 0.65rem;
+  }
+  .btn-nav {
+    padding: 4px 12px;
+  }
+
+  /* Contenidos */
+  h1 { font-size: 2.5rem; }
+  .content-split { flex-direction: column; text-align: center; }
+  .gallery-swiper { height: 350px; }
+  .features-grid { grid-template-columns: 1fr; }
+}
