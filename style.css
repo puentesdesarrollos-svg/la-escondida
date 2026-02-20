@@ -15,7 +15,13 @@ body {
   background-color: var(--color-bg); 
   color: var(--color-text); 
   line-height: 1.6; 
-  overflow-x: hidden; 
+}
+
+/* --- CONTENEDOR GENERAL --- */
+.container { 
+  width: 90%; 
+  max-width: 1100px; 
+  margin: 0 auto; 
 }
 
 /* --- NAVBAR --- */
@@ -26,83 +32,72 @@ body {
   padding: 20px 5%; 
   position: absolute; 
   width: 100%; 
-  top: 0; 
   z-index: 10; 
   background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent); 
 }
-.logo-img { height: 45px; width: auto; }
-.nav-list { display: flex; list-style: none; gap: 25px; }
-.nav-list a { text-decoration: none; color: var(--color-white); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
-.btn-nav { border: 1px solid var(--color-white); padding: 8px 18px; border-radius: 50px; }
+.logo-img { height: 40px; }
+.nav-list { display: flex; list-style: none; gap: 20px; }
+.nav-list a { color: #fff; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; font-weight: 500; }
 
 /* --- HERO --- */
 .hero { 
   height: 100vh; 
-  background-image: url('https://i.ibb.co/ym906yLH/foto-4-panoramica.png'); 
-  background-size: cover; 
-  background-position: center; 
-  position: relative; 
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://i.ibb.co/ym906yLH/foto-4-panoramica.png') center/cover no-repeat;
   display: flex; 
   align-items: center; 
   justify-content: center; 
   text-align: center; 
-  color: var(--color-white); 
+  color: #fff; 
 }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); }
-.hero-content { position: relative; z-index: 2; max-width: 850px; padding: 0 20px; }
-h1 { font-family: var(--font-serif); font-size: 4rem; margin-bottom: 20px; line-height: 1.1; }
+h1 { font-family: var(--font-serif); font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; }
 
 /* --- BOTONES --- */
-.btn-primary { background-color: var(--color-white); color: var(--color-text); padding: 15px 30px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; display: inline-block; border: none; cursor: pointer; }
-.btn-outline { border: 1px solid var(--color-white); color: var(--color-white); padding: 15px 30px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; display: inline-block; }
+.btn-primary { background: #fff; color: #333; padding: 15px 30px; text-decoration: none; display: inline-block; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
+.btn-outline { border: 1px solid #fff; color: #fff; padding: 15px 30px; text-decoration: none; display: inline-block; text-transform: uppercase; font-size: 0.8rem; }
 
-/* --- LAYOUT --- */
-.container { max-width: 1100px; margin: 0 auto; width: 90%; }
-.intro-section { padding: 100px 0; text-align: center; }
-.divider { width: 40px; height: 2px; background-color: var(--color-accent); margin: 30px auto; }
+/* --- SECCIONES --- */
+section { padding: 80px 0; }
+.intro-section { text-align: center; }
 
-.features-section { padding: 80px 0; background: #fff; }
-.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.feature-card { text-align: center; }
-.icon-box { font-size: 2.2rem; color: var(--color-accent); margin-bottom: 15px; }
+/* Amenities Grid */
+.features-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 40px; 
+}
+.feature-card { text-align: center; padding: 20px; }
 
-/* Masterplan */
-.masterplan-section { padding: 100px 0; background-color: var(--color-primary); color: var(--color-white); }
-.content-split { display: flex; align-items: center; gap: 50px; }
-.text-block, .image-block { flex: 1; }
-.masterplan-img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+/* Masterplan (EL CLAVE) */
+.masterplan-section { background: var(--color-primary); color: #fff; }
+.content-split { 
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  gap: 40px; 
+}
+.text-block, .image-block { flex: 1; min-width: 300px; }
+.masterplan-img { width: 100%; border-radius: 8px; }
 
 /* Ubicación */
-.location-section { padding: 80px 0; background-color: #fff; text-align: center; }
-.img-croquis-full { width: 100%; max-width: 900px; border-radius: 12px; }
+.location-section { background: #fff; text-align: center; }
+.img-croquis-full { width: 100%; max-width: 800px; border-radius: 8px; }
 
 /* Galería */
-.gallery-section { padding: 80px 0; text-align: center; }
-.gallery-swiper { width: 100%; max-width: 900px; height: 500px; border-radius: 10px; overflow: hidden; }
+.gallery-swiper { width: 100%; height: clamp(300px, 50vh, 550px); border-radius: 12px; overflow: hidden; }
 .gallery-swiper img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Footer */
-.footer-section { padding: 80px 0; background-color: #1a1a1a; color: #fff; text-align: center; }
+/* Contacto */
+.footer-section { background: #1a1a1a; color: #fff; text-align: center; }
 .contact-form { max-width: 450px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px; }
-.contact-form input { padding: 14px; background: #2a2a2a; border: none; color: #fff; }
-.btn-submit { padding: 16px; background: var(--color-accent); color: #fff; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; }
+.contact-form input { padding: 15px; background: #2a2a2a; border: none; color: #fff; }
+.btn-submit { background: var(--color-accent); border: none; padding: 15px; color: #fff; font-weight: bold; cursor: pointer; }
 
 /* =============================================
-   RESPONSIVE (Ajustes para Celular y Tablet)
+   AJUSTES PARA MÓVIL
    ============================================= */
-
-@media (max-width: 992px) {
-  h1 { font-size: 3rem; }
-  .content-split { flex-direction: column; text-align: center; }
-  .features-grid { grid-template-columns: 1fr; }
-}
-
 @media (max-width: 768px) {
-  .navbar { background: rgba(0,0,0,0.8); padding: 15px 5%; }
-  .nav-list { display: none; } /* Ocultamos el menú largo en cel */
-  h1 { font-size: 2.4rem; }
-  .hero { height: 80vh; }
-  .gallery-swiper { height: 350px; }
-  .intro-section { padding: 60px 0; }
-  .masterplan-section { padding: 60px 0; }
+  .nav-list { display: none; } /* Ocultamos menú en cel para que no tape el logo */
+  section { padding: 50px 0; }
+  .content-split { flex-direction: column; text-align: center; }
+  .navbar { justify-content: center; } /* Logo al centro en cel */
 }
