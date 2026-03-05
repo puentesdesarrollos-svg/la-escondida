@@ -30,4 +30,21 @@ const swiper = new Swiper('.gallery-swiper', {
   autoplay: { delay: 3500 },
   pagination: { el: '.swiper-pagination', clickable: true },
   navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+
+});
+
+// Funcionalidad Menú Hamburguesa
+const menuToggle = document.querySelector('#mobile-menu');
+const navList = document.querySelector('#nav-list');
+
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('active');
+});
+
+// Cierra el menú cuando tocas un enlace
+const navLinks = document.querySelectorAll('.nav-list a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navList.classList.remove('active');
+  });
 });
