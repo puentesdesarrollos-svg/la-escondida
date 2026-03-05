@@ -26,11 +26,28 @@ body { font-family: var(--font-sans); background-color: var(--color-bg); color: 
   .menu-toggle { display: block; }
   .nav-list {
     display: flex; flex-direction: column; position: absolute; top: 70px; left: -100%;
-    width: 100%; background-color: rgba(45, 59, 45, 0.95); text-align: center;
+    width: 100%; background-color: rgba(45, 59, 45, 0.98); text-align: center;
     transition: 0.3s ease; padding: 20px 0;
+    backdrop-filter: blur(10px);
   }
   .nav-list.active { left: 0; }
-  .nav-list li { margin: 15px 0; }
+  
+  /* SEPARACIÓN DE CATEGORÍAS EN EL MENÚ */
+  .nav-list li { 
+    margin: 0; 
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria sutil */
+  }
+  
+  .nav-list li:last-child {
+    border-bottom: none; /* Quitamos la línea al último elemento */
+    margin-top: 15px;
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 20px 0; /* Aumentamos el área de toque para mejor separación visual */
+  }
 }
 
 /* Hero */
@@ -113,7 +130,7 @@ h1 { font-family: var(--font-serif); font-size: 4rem; font-weight: 400; margin-b
   max-width: 450px; 
   margin: 40px auto; 
   display: flex; 
-  flex-direction: column; /* Fuerza el orden vertical */
+  flex-direction: column; 
   gap: 15px; 
 }
 
@@ -156,30 +173,29 @@ h1 { font-family: var(--font-serif); font-size: 4rem; font-weight: 400; margin-b
 
 .socials { display: flex; gap: 30px; }
 .socials a { 
-  color: var(--color-accent); /* Ahora son bien visibles */
+  color: var(--color-accent); 
   font-size: 2rem; 
   transition: 0.3s;
 }
 
 .puentes-brand p {
-  font-size: 1.2rem; /* Tamaño aumentado para legibilidad */
+  font-size: 1.2rem; 
   text-transform: uppercase;
-  letter-spacing: 6px; /* Más aire entre letras para un look premium */
-  color: var(--color-accent); /* Color crema para que resalte igual que el logo */
-  margin-bottom: 30px; /* Más espacio antes del logo gigante */
+  letter-spacing: 6px; 
+  color: var(--color-accent); 
+  margin-bottom: 30px; 
   font-weight: 400;
 }
 
 .puentes-logo-img {
-  height: 250px; /* Lo subimos un poco más para que mantenga la escala que querías */
+  height: 250px; 
   width: auto;
   opacity: 1;
   transition: 0.3s;
   display: block;
   margin: 0 auto;
 }
-.puentes-brand:hover .puentes-logo-img { opacity: 1; }
+
 /* Animaciones */
 .fade-in-scroll { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
 .fade-in-scroll.visible { opacity: 1; transform: translateY(0); }
-
