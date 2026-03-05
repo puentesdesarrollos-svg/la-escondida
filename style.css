@@ -103,10 +103,38 @@ h1 { font-family: var(--font-serif); font-size: 4rem; font-weight: 400; margin-b
 .fade-in-scroll { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
 .fade-in-scroll.visible { opacity: 1; transform: translateY(0); }
 
-/* Ocultar menú en celulares para que no pise el logo */
-@media (max-width: 768px) {
-  .nav-list {
-    display: none;
-  }
+/* Menú Hamburguesa - Oculto en PC */
+.menu-toggle {
+  display: none;
+  color: var(--color-white);
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
+/* Responsive - Celulares */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Muestra la hamburguesa */
+  }
+  
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: -100%; /* Oculta el menú a la izquierda */
+    width: 100%;
+    background-color: rgba(45, 59, 45, 0.95); /* Verde oscuro del proyecto con opacidad */
+    text-align: center;
+    transition: 0.3s ease;
+    padding: 20px 0;
+  }
+  
+  .nav-list.active {
+    left: 0; /* Muestra el menú cuando tiene la clase active */
+  }
+  
+  .nav-list li {
+    margin: 15px 0;
+  }
+}
